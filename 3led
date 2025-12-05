@@ -1,0 +1,20 @@
+from machine import ADC
+import time
+
+ldr = ADC(0)
+threshold = 300
+Led=Pin(2,Pin.OUT)
+
+while True:
+    nilai = ldr.read()
+
+    if nilai < threshold:
+      led.on()
+      print("terang")
+    else:
+      led.off()
+      print("gelap")
+
+    time.sleep(1 )
+
+#komponen esp8266, ldr modul, 3 led, dan 3 resistor
