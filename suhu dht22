@@ -1,0 +1,14 @@
+import dht
+from machine import Pin
+import time
+
+sensor = dht.DHT22(Pin(2))  # Pin(2) = D4 pada ESP8266
+
+while True:
+    sensor.measure()
+    suhu = sensor.temperature()    # Celcius
+    lembab = sensor.humidity()     # Persen
+
+    print("Suhu:", suhu, "C")
+    print("Lembab:", lembab, "%")
+    time.sleep(2)
