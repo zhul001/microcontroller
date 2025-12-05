@@ -1,0 +1,9 @@
+from machine import Pin, ADC
+import time
+
+ldr = ADC(0)
+
+while True:
+  nilai = ldr.read()
+  print("nilai LDR:", nilai)
+  time.sleep(1)
