@@ -1,0 +1,54 @@
+1. Siapkan Bot Telegram
+• Buka BotFather di Telegram
+• Kirim perintah /newbot
+• Masukkan nama bot
+• Masukkan username bot
+• BotFather memberikan link menuju bot kamu dan token bot, simpan token itu
+
+2. Temukan Chat ID
+• Buka bot yang telah dibuat dan tekan start
+• Buka bot get id di Telegram
+• tulis/tekan /start, lalu tulis /getid
+• Simpan chat ID itu
+
+3. Siapkan Server Proxy
+File tg_proxy.py digunakan untuk meneruskan pesan dari ESP8266 ke Telegram.
+
+3.1. Buat file baru di editor seperti VS Code atau PyCharm
+• Tempel isi tg_proxy.py ke editor anda
+
+3.2. Install paket Python
+Jalankan perintah berikut
+pip install flask
+pip install flask_cors
+pip install requests
+
+3.3. Jalankan server
+python tg_proxy.py
+
+3.4. Catat IP server
+• Cek ipconfig (Windows) atau ifconfig (Linux)
+• Ambil IPv4 address
+Contoh
+192.168.1.10
+Ini adalah IP yang dipakai ESP8266
+
+Siapkan Kode ESP8266
+4.1. Buka uPyCraft, Thonny, atau editor lain
+4.2. Buat file main.py
+4.3. Tempel kode ESP8266 ke dalamnya
+4.4. Ubah konfigurasi berikut
+SSID → nama WiFi kamu
+PASS → password WiFi kamu
+SERVER_IP → IP laptop yang menjalankan tg_proxy.py
+CHAT_ID → chat ID Telegram kamu
+PORT → 8888 (default)
+
+4.5 jalankan program main.py
+
+Uji Sistem
+• Tutup sensor LDR
+• LED merah menyala
+• ESP8266 mengirim pesan ke server
+• Server meneruskan pesan ke Telegram
+• Bot Telegram menampilkan alert
