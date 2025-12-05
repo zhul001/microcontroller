@@ -6,7 +6,7 @@ import requests
 app = Flask(__name__)
 CORS(app)  # Enable CORS untuk semua route
 
-TELEGRAM_TOKEN = "8218255141:AAEmhiliqLRI7il0ZmqaMAboDHPDJ3bVPzo"
+TELEGRAM_TOKEN = "token bot telegram"
 
 
 @app.route('/', methods=['GET', 'POST', 'OPTIONS'])
